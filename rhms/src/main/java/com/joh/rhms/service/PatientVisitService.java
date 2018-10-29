@@ -9,4 +9,6 @@ public interface PatientVisitService {
 
 	List<PatientVisit> findAllDoctorPatientVisit(int id, Date from, Date to);
 
+	PatientVisit save(PatientVisit patientVisit);
+
 }

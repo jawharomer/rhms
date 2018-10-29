@@ -61,22 +61,28 @@
 
 		<tr>
 			<td>Discount Amount</td>
-			<td><input type="number" min="0" max="1"
+			<td><input ng-disabled="!patientVisit.discountType" type="number" min="0" max="1"
 				class="form-control form-control-sm" name="discountAmount"
 				ng-model="patientVisit.discountAmount"></td>
 		</tr>
 		<tr>
 			<td>Total Price</td>
-			<td><input type="number" class="form-control form-control-sm"
-				name="totalPrice" ng-model="patientVisit.totalPrice"></td>
+			<td><input required="required" min="0" type="number"
+				class="form-control form-control-sm" name="totalPrice"
+				ng-model="patientVisit.totalPrice"></td>
+		</tr>
+
+		<tr ng-if="patientVisit.discountType">
+			<td>Total Payment</td>
+			<td><input readonly="readonly" class="form-control form-control-sm"   ng-value="getTotalPayment()"></td>
 		</tr>
 
 
 
 		<tr>
 			<td>Visit Date</td>
-			<td><input readonly="readonly" id="visitDate"
-				class="form-control form-control-sm" name="visitDate"
+			<td><input required="required" readonly="readonly"
+				id="visitDate" class="form-control form-control-sm" name="visitDate"
 				ng-model="patientVisit.visitDate"></td>
 		</tr>
 

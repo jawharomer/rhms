@@ -126,6 +126,8 @@ public class PatientController {
 		logger.info("patient=" + patient);
 
 		model.addAttribute("jsonPatient", mapper.writeValueAsString(patient));
+		System.err.println(" mapper.writeValueAsString(patient)=" + mapper.writeValueAsString(patient));
+
 		model.addAttribute("jsonVisitReferences", mapper.writeValueAsString(visitReferences));
 
 		return "editPatient";

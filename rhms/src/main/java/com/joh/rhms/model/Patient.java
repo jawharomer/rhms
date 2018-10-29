@@ -232,6 +232,8 @@ public class Patient {
 	public void setHistoryOperations(List<String> historyOperations) {
 		this.historyOperations = historyOperations;
 	}
+	
+	
 
 	@Override
 	public String toString() {

@@ -52,12 +52,15 @@ public class PatientVisitController {
 		model.addAttribute("doctors", doctors);
 	}
 
-	@GetMapping(path = "/doctor/{id}")
+	@GetMapping(path = "/doctors/{id}")
 	public String getAllDoctorPatientVisits(@PathVariable int id,
 			@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date from,
 			@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date to, Model model) {
 		logger.info("getAllDoctorPatientVisits->fired");
 		logger.info("id=" + id);
+
+		Doctor doctor = doctorService.findOne(id);
+		logger.info("doctor=" + doctor);
 
 		logger.info("from=" + from);
 		logger.info("to=" + to);
@@ -69,6 +72,8 @@ public class PatientVisitController {
 		model.addAttribute("patientVisits", patientVisits);
 		model.addAttribute("from", from);
 		model.addAttribute("to", to);
+
+		model.addAttribute("doctor", doctor);
 
 		return "patientVisits";
 	}
@@ -92,6 +97,14 @@ public class PatientVisitController {
 		model.addAttribute("jsonDoctors", mapper.writeValueAsString(doctors));
 
 		return "addPatientVisit";
+	}
+
+	@PostMapping(path = "/add")
+	public String addPatientVisit(@RequestBody PatientVisit patientVisit, Model model) {
+		logger.info("addPatientVisit->fired");
+		logger.info("patientVisit=" + patientVisit);
+		patientVisitService.save(patientVisit);
+		return "success";
 	}
 
 }

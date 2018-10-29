@@ -10,7 +10,9 @@
 
 <div id="add-patient-contaner" ng-app="addPatient"
 	ng-controller="addPatient" ng-init="init()" ng-form name="form">
-	<h4>Edit Patient</h4>
+	<h4>Edit Patient dd</h4>
+
+	{{patient.visitReference|json}}
 
 	<div class="p-1 m-1">
 		<sf:form commandName="patient">
@@ -57,10 +59,11 @@
 		<tr>
 			<td>Visit Reference</td>
 			<td><select required name="visitReference"
-				class="form-control form-control-sm" name="visitReference"
-				required="required" ng-model="patient.visitReference">
+				class="form-control form-control-sm"
+				ng-model="patient.visitReference">
 					<option value="">Choose</option>
-					<option ng-repeat="item in visitReferences" ng-value="item">{{item.reference}}</option>
+					<option ng-repeat="item in visitReferences" ng-value="item"
+						ng-selected="patient.visitReference.id==item.id">{{item.reference}}</option>
 			</select></td>
 		</tr>
 
@@ -86,10 +89,11 @@
 		<tr>
 			<td>Gender</td>
 			<td><label> <input name="gender" required="required"
-					type="radio" name="gender" class="radio-inline"
-					ng-model="patient.gender" value="0"> Male
-			</label> <label> <input type="radio" name="gender"
-					class="radio-inline" ng-model="patient.gender" value="1">Female
+					type="radio" class="radio-inline" ng-model="patient.gender"
+					ng-value="0"> Male
+			</label> <label> <input name="gender" required="required"
+					type="radio" class="radio-inline" ng-model="patient.gender"
+					ng-value="1"> Female
 			</label></td>
 		</tr>
 

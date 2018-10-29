@@ -16,4 +16,9 @@ public class DoctorServiceImpl implements DoctorService {
 	public Iterable<Doctor> findAll() {
 		return doctorDAO.findAll();
 	}
+	
+	@Override
+	public Doctor findOne(int id) {
+		return doctorDAO.findOne(id);
+	}
 }

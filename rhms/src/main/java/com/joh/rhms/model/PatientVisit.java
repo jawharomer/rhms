@@ -42,7 +42,7 @@ public class PatientVisit {
 	@Column(name = "VISIT_CASE")
 	private String visitCase;
 
-	@Column(name = "VISIT_DATE", insertable = false)
+	@Column(name = "VISIT_DATE")
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date visitDate;

@@ -21,4 +21,10 @@ public class PatientVisitServiceImpl implements PatientVisitService {
 
 	}
 
+	@Override
+	public PatientVisit save(PatientVisit patientVisit) {
+		return patientVisitDAO.save(patientVisit);
+
+	}
+
 }

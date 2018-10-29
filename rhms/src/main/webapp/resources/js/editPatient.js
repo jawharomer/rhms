@@ -19,6 +19,8 @@ app.controller('addPatient', function($scope, $http) {
 		console.log("jsonPatient=", jsonPatient);
 		$scope.patient = JSON.parse(jsonPatient);
 
+		console.log("patient=" ,$scope.patient);
+
 		console.log("jsonVisitReferences=", jsonVisitReferences);
 		$scope.visitReferences = JSON.parse(jsonVisitReferences);
 	}
