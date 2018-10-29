@@ -29,11 +29,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.joh.rhms.validator.PatientValidation;
 
 @Entity
-
 @Table(name = "PATIENTS")
 public class Patient {
 
-	@NotNull(message = "patient id is null")
+	
 	@Column(name = "I_PATIENT")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

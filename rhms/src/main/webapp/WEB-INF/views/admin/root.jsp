@@ -17,41 +17,19 @@
 		<ul class="list-group">
 			<li class="list-group-item"><a href="<c:url value="/admin"/>">
 					Dashboard</a></li>
-
-
 			<li class="list-group-item"><a
 				href="<c:url value="/patients"/>?from=${currentDate}&to=${tomorrow}">
 					Patients</a></li>
 
-			<li class="list-group-item"><a
-				href="<c:url value="/patientVisits"/>?from=${currentDate}&to=${tomorrow}">
-					Patient Visits</a></li>
+			<li class="list-group-item"><h6 class="text-info py-2">PatientVisits</h6></li>
+			<c:forEach items="${doctors}" var="item">
+				<li class="list-group-item"><a
+					href="<c:url value="/patientVisits/doctor/id"/>${item.id}?from=${currentDate}&to=${tomorrow}">
+						${item.fullName}</a></li>
+			</c:forEach>
 
 
-			<li class="list-group-item"><a
-				href="<c:url value="/patientVisits/patientProductUseds"/>?from=${currentDate}&to=${tomorrow}">
-					Patient Product Used</a></li>
 
-			<li class="list-group-item"><a
-				href="<c:url value="/operations"/>">Operations</a></li>
-			<li class="list-group-item"><a href="<c:url value="/doctors"/>">Doctors</a></li>
-
-
-			<li><h4 class="text-info p-1 pl-2">Stock</h4></li>
-			<li class="list-group-item text-info"><a
-				href="<c:url value="/orders/add"/>">Order</a></li>
-			<li class="list-group-item text-info"><a
-				href="<c:url value="/orders"/>?from=${currentDate}&to=${tomorrow}">
-					Orders</a></li>
-
-			<li class="list-group-item text-info"><a
-				href="<c:url value="/orderDetails"/>?from=${currentDate}&to=${tomorrow}">
-					Stock</a></li>
-
-			<li class="list-group-item text-info"><a href="<c:url value="/vendors"/>">Vendors</a></li>
-
-			<li class="list-group-item text-info"><a
-				href="<c:url value="/productCategories"/>">ProductCategories</a></li>
 		</ul>
 	</section>
 

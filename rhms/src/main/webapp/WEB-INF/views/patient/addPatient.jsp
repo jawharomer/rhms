@@ -9,36 +9,44 @@
 </script>
 
 <div id="add-patient-contaner" ng-app="addPatient"
-	ng-controller="addPatient" ng-init="init()">
+	ng-controller="addPatient" ng-init="init()" ng-form name="form">
 	<h4>Add Patient</h4>
+	
+	
 
-	{{patient}}
+	<div class="p-1 m-1">
+		<sf:form commandName="patient">
+			<sf:errors path="*"></sf:errors>
+		</sf:form>
+	</div>
 
 	<table>
 		<tr>
 			<td>FullName</td>
-			<td><input class="form-control form-control-sm"
-				ng-model="patient.fullName"></td>
+			<td><input name="fullName" required="required"
+				class="form-control form-control-sm" ng-model="patient.fullName"></td>
 		</tr>
 
 
 		<tr>
 			<td>ArabicFullName</td>
-			<td><input class="form-control form-control-sm"
+			<td><input name="arabicFullName" required="required"
+				class="form-control form-control-sm"
 				ng-model="patient.arabicFullName"></td>
 		</tr>
 
 		<tr>
 			<td>Phone</td>
-			<td><input class="form-control form-control-sm"
-				ng-model="patient.phone"></td>
+			<td><input required name="phone"
+				class="form-control form-control-sm" ng-model="patient.phone"></td>
 		</tr>
 
 
 		<tr>
 			<td>BirthDate</td>
-			<td><input id="birth-date" readonly="readonly"
-				class="form-control form-control-sm" ng-model="patient.birthDate"></td>
+			<td><input required name="birthDate" id="birth-date"
+				readonly="readonly" class="form-control form-control-sm"
+				ng-model="patient.birthDate"></td>
 		</tr>
 
 
@@ -50,19 +58,19 @@
 
 		<tr>
 			<td>Visit Reference</td>
-			<td><select class="form-control form-control-sm"
-				name="visitReference" required="required"
-				ng-model="patient.visitReference">
+			<td><select required name="visitReference"
+				class="form-control form-control-sm" name="visitReference"
+				required="required" ng-model="patient.visitReference">
 					<option value="">Choose</option>
-					<option ng-repeat="item in visitReferences" ng-value="item">{{item.name}}</option>
+					<option ng-repeat="item in visitReferences" ng-value="item">{{item.reference}}</option>
 			</select></td>
 		</tr>
 
 
 		<tr>
 			<td>MaritalStatus</td>
-			<td class="py-1"><label> <input type="radio"
-					name="maritalStatus" class="radio-inline"
+			<td class="py-1"><label> <input required="required"
+					name="maritalStatus" type="radio" class="radio-inline"
 					ng-model="patient.maritalStatus" value="Single"> Single
 			</label> <label> <input type="radio" name="maritalStatus"
 					class="radio-inline" ng-model="patient.maritalStatus"
@@ -79,9 +87,9 @@
 
 		<tr>
 			<td>Gender</td>
-			<td><label> <input type="radio" name="maritalStatus"
-					class="radio-inline" ng-model="patient.gender" value="0">
-					Male
+			<td><label> <input name="gender" required="required"
+					type="radio" name="maritalStatus" class="radio-inline"
+					ng-model="patient.gender" value="0"> Male
 			</label> <label> <input type="radio" name="maritalStatus"
 					class="radio-inline" ng-model="patient.gender" value="1">Female
 			</label></td>
@@ -202,9 +210,9 @@
 	</div>
 
 
-
 	<div class="p-2">
-		<button class="btn btn-success" ng-click="save()">
+		<button class="btn btn-success" ng-disabled="form.$invalid"
+			ng-click="save()">
 			<i class="fa fa-plus"></i>
 		</button>
 

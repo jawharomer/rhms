@@ -19,4 +19,13 @@ public class PatientServiceImpl implements PatientService {
 		return patientDAO.findAllByTimeBetweenOrderByTimeDesc(from, to);
 	}
 
+	@Override
+	public Patient save(Patient patient) {
+		return patientDAO.save(patient);
+	}
+	
+	@Override
+	public Patient findOne(int id) {
+		return patientDAO.findOne(id);
+	}
 }
