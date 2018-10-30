@@ -133,4 +133,14 @@ public class PatientController {
 		return "editPatient";
 	}
 
+	@PostMapping(path = "/delete/{id}")
+	private String deletePatient(@PathVariable int id) {
+		logger.info("deletePatient->fired");
+		logger.info("id=" + id);
+
+		patientService.delete(id);
+
+		return "success";
+	}
+
 }

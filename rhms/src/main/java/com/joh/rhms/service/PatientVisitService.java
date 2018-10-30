@@ -11,4 +11,8 @@ public interface PatientVisitService {
 
 	PatientVisit save(PatientVisit patientVisit);
 
+	List<PatientVisit> findAllByVisitDateBetween(Date from, Date to);
+
+	PatientVisit findOne(int id);
+
 }

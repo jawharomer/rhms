@@ -142,8 +142,24 @@
 		</put-list-attribute>
 		<put-list-attribute name="requiredJSFiles"
 			inherit="true">
-			<add-attribute value="moment" />
 			<add-attribute value="addPatientVisit" />
+		</put-list-attribute>
+	</definition>
+	
+	
+	<!-- Edit PatientVisit -->
+	<definition name="editPatientVisit" extends="adminRoot">
+		<put-attribute name="title" value="PatientVisit" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/editPatientVisit.jsp"
+			cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="editPatientVisit" />
+		</put-list-attribute>
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="editPatientVisit" />
 		</put-list-attribute>
 	</definition>
 
@@ -161,6 +177,24 @@
 			<add-attribute value="patientVisits" />
 		</put-list-attribute>
 	</definition>
+
+
+	<!-- AllPatientVisits -->
+	<definition name="allPatientVisits" extends="adminRoot">
+		<put-attribute name="title" value="Patient" />
+		<put-attribute name="adminBody"
+			value="/WEB-INF/views/patientVisit/allPatientVisits.jsp"
+			cascade="true" />
+		<put-list-attribute name="requiredCSSFiles"
+			inherit="true">
+			<add-attribute value="allPatientVisits" />
+		</put-list-attribute>
+		<put-list-attribute name="requiredJSFiles"
+			inherit="true">
+			<add-attribute value="allPatientVisits" />
+		</put-list-attribute>
+	</definition>
+
 
 
 

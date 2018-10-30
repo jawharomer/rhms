@@ -9,4 +9,7 @@ import com.joh.rhms.model.PatientVisit;
 
 public interface PatientVisitDAO extends CrudRepository<PatientVisit, Integer> {
 	List<PatientVisit> findAllByDoctorIdAndVisitDateBetween(int id, Date from, Date to);
+
+	List<PatientVisit> findAllByVisitDateBetween(Date from, Date to);
+
 }

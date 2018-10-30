@@ -16,9 +16,16 @@
 	<section id="section-right" class="card">
 		<ul class="list-group">
 
+			<li class="list-group-item"><a href="<c:url value="/admin"/>">
+					Dashboard</a></li>
+
 			<li class="list-group-item"><a
 				href="<c:url value="/patients"/>?from=${currentDate}&to=${tomorrow}">
 					Patients</a></li>
+
+			<li class="list-group-item"><a
+				href="<c:url value="/patientVisits"/>?from=${currentDate}&to=${tomorrow}">
+					All Patient Visit</a></li>
 
 			<li class="list-group-item"><h6 class="text-info py-2">PatientVisits</h6></li>
 			<c:forEach items="${doctors}" var="item">

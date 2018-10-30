@@ -8,9 +8,9 @@
 	var jsonDoctors = '${jsonDoctors}';
 </script>
 
-<div id="add-patient-contaner" ng-app="addPatientVisit"
-	ng-controller="addPatientVisit" ng-init="init()" ng-form name="form">
-	<h4>Add Patient Visit</h4>
+<div  ng-app="editPatientVisit"
+	ng-controller="editPatientVisit" ng-init="init()" ng-form name="form">
+	<h4>Edit Patient Visit</h4>
 
 	<div class="p-1 m-1">
 		<sf:form commandName="patientVisit">
@@ -18,7 +18,7 @@
 		</sf:form>
 	</div>
 
-	<table id="add-patient-visit-table">
+	<table id="edit-patient-visit-table">
 
 		<tr>
 			<td>Patient ID</td>
@@ -49,8 +49,8 @@
 
 		<tr>
 			<td>Discount Type</td>
-			<td><select name="discountType"
-				class="form-control form-control-sm"
+			<td><select  name="discountType"
+				class="form-control form-control-sm" 
 				ng-model="patientVisit.discountType">
 					<option value="">Choose</option>
 					<option value="Doctor">User</option>
@@ -100,9 +100,9 @@
 
 
 	<div class="p-2">
-		<button class="btn btn-success" ng-disabled="form.$invalid"
+		<button class="btn btn-warning" ng-disabled="form.$invalid"
 			ng-click="save()">
-			<i class="fa fa-plus"></i>
+			<i class="fa fa-edit"></i>
 		</button>
 
 	</div>

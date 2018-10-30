@@ -28,4 +28,9 @@ public class PatientServiceImpl implements PatientService {
 	public Patient findOne(int id) {
 		return patientDAO.findOne(id);
 	}
+	
+	@Override
+	public void delete(int id) {
+		 patientDAO.delete(id);
+	}
 }

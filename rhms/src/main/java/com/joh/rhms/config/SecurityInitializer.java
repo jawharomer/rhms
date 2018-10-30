@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 public class SecurityInitializer
-//extends AbstractSecurityWebApplicationInitializer
+extends AbstractSecurityWebApplicationInitializer
 {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebInitializer.class);

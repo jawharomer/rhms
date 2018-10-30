@@ -8,11 +8,9 @@
 	var jsonVisitReferences = '${jsonVisitReferences}';
 </script>
 
-<div id="add-patient-contaner" ng-app="addPatient"
+<div id="edit-patient-contaner" ng-app="addPatient"
 	ng-controller="addPatient" ng-init="init()" ng-form name="form">
-	<h4>Edit Patient dd</h4>
-
-	{{patient.visitReference|json}}
+	<h4>Edit Patient</h4>
 
 	<div class="p-1 m-1">
 		<sf:form commandName="patient">
@@ -20,7 +18,7 @@
 		</sf:form>
 	</div>
 
-	<table>
+	<table class="edit-patient-table">
 		<tr>
 			<td>FullName</td>
 			<td><input name="fullName" required="required"

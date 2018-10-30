@@ -12,4 +12,6 @@ public interface PatientService {
 
 	Patient findOne(int id);
 
+	void delete(int id);
+
 }

@@ -77,7 +77,11 @@
 							class="fa fa-ticket"></i>
 					</a> <a href="<c:url value="/patients/edit/"/>${item.id}"
 						class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>
-					</a></td>
+					</a>
+						<button class="btn btn-sm btn-danger"
+							onclick="deletePatient(${item.id})">
+							<i class="fa fa-times"></i>
+						</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>

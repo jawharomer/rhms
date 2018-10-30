@@ -21,9 +21,9 @@ app.controller('addPatientVisit', function($scope, $http) {
 	}
 
 	$scope.$watch('patientVisit.discountType', function() {
-     if(!$scope.patientVisit.discountType){
-    	 $scope.patientVisit.discountAmount="";
-     }
+		if (!$scope.patientVisit.discountType) {
+			$scope.patientVisit.discountAmount = "";
+		}
 	});
 
 	$scope.getTotalPayment = function() {
@@ -47,10 +47,10 @@ app.controller('addPatientVisit', function($scope, $http) {
 			$("#modal-body").html(response.data);
 			$("#modal").modal("show");
 		}, function(response) {
-			// console.log(response);
-			// document.open();
-			// document.write(response.data);
-			// document.close();
+			console.log(response);
+			document.open();
+			document.write(response.data);
+			document.close();
 		});
 
 	}

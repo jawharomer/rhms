@@ -26,5 +26,17 @@ public class PatientVisitServiceImpl implements PatientVisitService {
 		return patientVisitDAO.save(patientVisit);
 
 	}
+	
+	@Override
+	public List<PatientVisit> findAllByVisitDateBetween(Date from, Date to) {
+		return patientVisitDAO.findAllByVisitDateBetween(from, to);
+
+	}
+	
+	@Override
+	public PatientVisit findOne(int id) {
+		return patientVisitDAO.findOne(id);
+
+	}
 
 }

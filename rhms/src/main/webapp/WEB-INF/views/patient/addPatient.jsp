@@ -20,7 +20,7 @@
 		</sf:form>
 	</div>
 
-	<table>
+	<table  class="add-patient-table">
 		<tr>
 			<td>FullName</td>
 			<td><input name="fullName" required="required"
