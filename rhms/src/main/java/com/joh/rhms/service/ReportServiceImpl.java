@@ -12,12 +12,15 @@ import com.joh.rhms.domain.model.NotificationD;
 public class ReportServiceImpl implements ReportService {
 	@Autowired
 	private ReportDAO reportDAO;
-	
-	
+
 	@Override
 	public List<NotificationD> findAdminNotifications() {
 		return reportDAO.findAdminNotifications();
 	}
-	
-	
+
+	@Override
+	public List<String> findAllChronicDisease() {
+		return reportDAO.findAllChronicDisease();
+	}
+
 }

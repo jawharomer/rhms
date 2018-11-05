@@ -40,14 +40,12 @@ public class PatientVisitController {
 	@Autowired
 	private PatientService patientService;
 
-	
 	@Autowired
 	private PatientVisitService patientVisitService;
 
 	@Autowired
 	private DoctorService doctorService;
 
-	
 	@ModelAttribute
 	public void addDoctors(Model model) {
 		Iterable<Doctor> doctors = doctorService.findAll();
@@ -163,8 +161,7 @@ public class PatientVisitController {
 
 		return "editPatientVisit";
 	}
-	
-	
+
 	@PostMapping(path = "/update")
 	public String updatePatientVisit(@RequestBody @Valid PatientVisit patientVisit, BindingResult result, Model model,
 			HttpServletResponse response) throws JsonProcessingException {

@@ -14,7 +14,7 @@ import com.joh.rhms.validator.PatientValidation;
 @Table(name = "VISIT_REFERENCES")
 public class VisitReference {
 
-	@NotNull(groups = { PatientValidation.Insert.class },message="visit reference is null")
+	@NotNull(groups = { PatientValidation.Insert.class }, message = "visit reference is null")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "I_VISIT_REFERENCE")

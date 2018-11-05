@@ -1,6 +1,7 @@
 package com.joh.rhms.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -26,6 +27,7 @@ import com.joh.rhms.model.Patient;
 import com.joh.rhms.model.VisitReference;
 import com.joh.rhms.service.DoctorService;
 import com.joh.rhms.service.PatientService;
+import com.joh.rhms.service.ReportService;
 import com.joh.rhms.service.VisitReferenceService;
 
 @Controller()
@@ -42,6 +44,9 @@ public class PatientController {
 
 	@Autowired
 	private DoctorService doctorService;
+
+	@Autowired
+	private ReportService reportService;
 
 	@ModelAttribute
 	public void addDoctors(Model model) {
@@ -76,11 +81,14 @@ public class PatientController {
 
 		Iterable<VisitReference> visitReferences = visitReferenceService.findAll();
 
+		List<String> chronicDiseases = reportService.findAllChronicDisease();
+		logger.info("chronicDiseases=" + chronicDiseases);
+
 		Patient patient = new Patient();
 
 		model.addAttribute("jsonPatient", mapper.writeValueAsString(patient));
 		model.addAttribute("jsonVisitReferences", mapper.writeValueAsString(visitReferences));
-
+		model.addAttribute("jsonChronicDiseases", mapper.writeValueAsString(chronicDiseases));
 		return "addPatient";
 	}
 
@@ -100,9 +108,13 @@ public class PatientController {
 			ObjectMapper mapper = new ObjectMapper();
 
 			Iterable<VisitReference> visitReferences = visitReferenceService.findAll();
+			List<String> chronicDiseases = reportService.findAllChronicDisease();
+			logger.info("chronicDiseases=" + chronicDiseases);
 
 			model.addAttribute("jsonPatient", mapper.writeValueAsString(patient));
 			model.addAttribute("jsonVisitReferences", mapper.writeValueAsString(visitReferences));
+			model.addAttribute("jsonChronicDiseases", mapper.writeValueAsString(chronicDiseases));
+			
 
 			return "addPatient";
 
@@ -125,10 +137,14 @@ public class PatientController {
 		Patient patient = patientService.findOne(id);
 		logger.info("patient=" + patient);
 
+		List<String> chronicDiseases = reportService.findAllChronicDisease();
+		logger.info("chronicDiseases=" + chronicDiseases);
+
 		model.addAttribute("jsonPatient", mapper.writeValueAsString(patient));
 		System.err.println(" mapper.writeValueAsString(patient)=" + mapper.writeValueAsString(patient));
 
 		model.addAttribute("jsonVisitReferences", mapper.writeValueAsString(visitReferences));
+		model.addAttribute("jsonChronicDiseases", mapper.writeValueAsString(chronicDiseases));
 
 		return "editPatient";
 	}

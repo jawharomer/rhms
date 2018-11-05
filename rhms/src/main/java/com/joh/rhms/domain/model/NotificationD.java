@@ -7,7 +7,7 @@ public class NotificationD {
 	private String etc;
 
 	public static enum NotificationType {
-		 WARNING, DANGER,INFO
+		WARNING, DANGER, INFO
 	}
 
 	private NotificationType notificationType;
@@ -15,8 +15,6 @@ public class NotificationD {
 	public NotificationD() {
 
 	}
-
-
 
 	public String getTitle() {
 		return title;

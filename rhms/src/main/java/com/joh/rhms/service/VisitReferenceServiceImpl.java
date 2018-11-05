@@ -9,11 +9,9 @@ import com.joh.rhms.model.VisitReference;
 @Service
 public class VisitReferenceServiceImpl implements VisitReferenceService {
 
-	
 	@Autowired
 	private VisitReferenceDAO visitReferenceDAO;
-	
-	
+
 	@Override
 	public Iterable<VisitReference> findAll() {
 		return visitReferenceDAO.findAll();
