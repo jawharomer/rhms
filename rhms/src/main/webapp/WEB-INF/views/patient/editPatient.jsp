@@ -12,7 +12,7 @@
 
 <div id="add-patient-contaner" ng-app="addPatient"
 	ng-controller="addPatient" ng-init="init()" ng-form name="form">
-	<h4>Edit Patient</h4>
+	<h4 class="text-warning">Edit Patient</h4>
 
 
 
@@ -117,15 +117,21 @@
 		</tr>
 
 		<tr>
-			<td>Allergy</td>
-			<td>
-				<div class="input-group">
-					<div class="input-group-prepend pr-1">
-						<input ng-model="hasAllergy" type="checkbox">
-					</div>
-					<input ng-show="hasAllergy" class="form-control form-control-sm"
-						ng-model="patient.allergy">
+			<td class="text-info border-top">Allergy</td>
+			<td class="text-info border-top">
+				<div>
+					<label> <input name="allergy" type="radio"
+						class="radio-inline" ng-model="patient.allergy" value="Yes">Yes
+					</label> <label><input name="allergy" type="radio"
+						class="radio-inline" ng-model="patient.allergy" value="No">No
+					</label> <label><input name="allergy" type="radio"
+						class="radio-inline" ng-model="patient.allergy" value="Unkown">
+						Unkown </label>
 				</div>
+				<div>
+					<input ng-hide="!patient.allergy||patient.allergy=='No'" placeholder="Allergy Note" ng-model="patient.allergyNote" class="form-control form-control-sm">
+				</div>
+
 			</td>
 		</tr>
 	</table>
@@ -198,8 +204,9 @@
 	<div class="p-2">
 		<button class="btn btn-warning" ng-disabled="form.$invalid"
 			ng-click="save()">
-			<i class="fa fa-edit"></i>
+			<i class="fa fa-warning"></i>
 		</button>
+
 	</div>
 
 
