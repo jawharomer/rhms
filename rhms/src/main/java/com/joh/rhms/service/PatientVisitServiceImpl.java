@@ -39,4 +39,10 @@ public class PatientVisitServiceImpl implements PatientVisitService {
 
 	}
 
+	@Override
+	public void delete(int id) {
+		patientVisitDAO.delete(id);
+
+	}
+
 }

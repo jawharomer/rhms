@@ -46,6 +46,12 @@ public class PatientVisit {
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date visitDate;
+	
+	@Column(name = "REGISTER_TIME", insertable = false, updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp()
+	@ColumnDefault("CURRENT_TIMESTAMP")
+	private Date time;
 
 	@Column(name = "TOTAL_PRICE")
 	private Double totalPrice;

@@ -77,7 +77,11 @@
 						</c:if></td>
 					<td><a href="<c:url value="/patientVisits/edit/"/>${item.id}"
 						class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>
-					</a></td>
+					</a>
+						<button class="btn btn-danger btn-sm"
+							onclick="deletePatientVisit(${item.id})">
+							<i class="fa fa-times"></i>
+						</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>

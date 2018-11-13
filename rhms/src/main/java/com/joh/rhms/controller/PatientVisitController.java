@@ -189,4 +189,14 @@ public class PatientVisitController {
 
 	}
 
+	@PostMapping(path = "/delete/{id}")
+	public String deletePatientVisit(@PathVariable int id) {
+		logger.info("deletePatientVisit->fired");
+
+		patientVisitService.delete(id);
+
+		return "success";
+
+	}
+
 }
