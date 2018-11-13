@@ -53,9 +53,9 @@
 				class="form-control form-control-sm"
 				ng-model="patientVisit.discountType">
 					<option value="">Choose</option>
-					<option value="Doctor">User</option>
+					<option value="User">User</option>
 					<option value="Doctor">Doctor</option>
-					<option value="Doctor">Admin</option>
+					<option value="Admin">Admin</option>
 			</select></td>
 		</tr>
 
