@@ -105,10 +105,18 @@ public class Appointment {
 		this.doctor = doctor;
 	}
 
+	public String getProcedure() {
+		return procedure;
+	}
+
+	public void setProcedure(String procedure) {
+		this.procedure = procedure;
+	}
+
 	@Override
 	public String toString() {
-		return "Appointment [id=" + id + ", fullName=" + fullName + ", phone=" + phone + ", date=" + date + ", time="
-				+ time + ", doctor=" + doctor + "]";
+		return "Appointment [id=" + id + ", fullName=" + fullName + ", phone=" + phone + ", procedure=" + procedure
+				+ ", date=" + date + ", time=" + time + ", doctor=" + doctor + "]";
 	}
 
 }
