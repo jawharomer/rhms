@@ -29,9 +29,19 @@
 
 			<li class="list-group-item"><h6 class="text-info py-2">PatientVisits</h6></li>
 			<c:forEach items="${doctors}" var="item">
-				<li class="list-group-item"><a
-					href="<c:url value="/patientVisits/doctors/"/>${item.id}?from=${currentDate}&to=${tomorrow}">
-						${item.fullName}</a></li>
+				<li class="list-group-item d-flex justify-content-between">
+					<div class="align-self-start">
+						<a
+							href="<c:url value="/patientVisits/doctors/"/>${item.id}?from=${currentDate}&to=${tomorrow}">
+							${item.fullName} </a>
+					</div>
+					<div class="align-self-end">
+						<a class="btn btn-sm btn-secondary"
+							href="<c:url value="/appointments/doctors/"/>${item.id}?from=${currentDate}&to=${tomorrow}">
+							<i class="fa fa-calendar"></i>
+						</a>
+					</div>
+				</li>
 			</c:forEach>
 
 

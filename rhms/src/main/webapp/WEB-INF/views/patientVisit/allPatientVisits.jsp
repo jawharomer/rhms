@@ -49,6 +49,7 @@
 				<th>Total Price</th>
 				<th>Discount Type</th>
 				<th>Total Payment</th>
+				<th>Visit Case</th>
 				<th class="cus-not-export">F</th>
 			</tr>
 		</thead>
@@ -75,6 +76,8 @@
 							<fmt:formatNumber value="${totalPayment}" maxFractionDigits="3" />
 							<c:set var="sumTotalPrice" value="${sumTotalPrice+totalPayment}" />
 						</c:if></td>
+
+					<td class="cus-note-td" title="${item.visitCase}">${item.visitCase}</td>
 					<td><a href="<c:url value="/patientVisits/edit/"/>${item.id}"
 						class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>
 					</a>
@@ -95,6 +98,7 @@
 				<th>Total Price</th>
 				<th>Discount Type</th>
 				<th>Total Payment</th>
+				<th>Visit Case</th>
 				<th class="cus-not-search">&nbsp;</th>
 			</tr>
 		</tfoot>
